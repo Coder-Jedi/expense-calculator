@@ -1,0 +1,15 @@
+.main-container {
+  background-color: bisque;
+  width: 200px;
+  height: max-content;
+  padding: 10px;
+}
+.amount {
+  padding-right: 5px;
+}
+.description {
+  padding-left: 5px;
+  padding-right: 10px;
+}
+.edit-button {
+}

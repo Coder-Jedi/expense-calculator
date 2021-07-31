@@ -1,0 +1,42 @@
+.main-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content 120px max-content auto;
+  background-color: aqua;
+  height: 100vh;
+}
+.header-container {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-color: blueviolet;
+  display: inline-flex;
+  justify-content: center;
+}
+.budget-display-container {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: brown;
+}
+.input-form-container {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-color: chartreuse;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+.lists-container {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  background-color: crimson;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.income-container {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+}
+.expenses-container {
+  background-color: darkorange;
+}

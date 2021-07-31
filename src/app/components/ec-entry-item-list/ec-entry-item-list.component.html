@@ -1,0 +1,20 @@
+<app-ec-entry-item 
+    [amount]="1000" 
+    description="Monthly Salary" 
+    entryType="income">
+</app-ec-entry-item>
+<button type="button" (click)="addIncomeObject()">Add Income Object</button>
+<button type="button" (click)="addExpenseObject()">Add Expense Object</button>
+<button type="button" (click)="consolelogObject()">console.log object</button>
+<button type="button" (click)="deleteItem()">Delete Item</button>
+
+<p>type: {{type}}</p>
+<ng-container *ngFor="let item of itemsArray">
+<div *ngIf="item.type===type">
+    <p>id: {{item.id}} <br>
+    type: {{item.type}} <br>
+    amount: {{item.amount}} <br>
+    description: {{item.description}} <br>
+    count: {{count}}</p>
+</div>
+</ng-container>
