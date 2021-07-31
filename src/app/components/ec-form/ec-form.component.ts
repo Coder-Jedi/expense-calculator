@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ec-form',
@@ -11,8 +11,15 @@ export class EcFormComponent implements OnInit {
 
   ngOnInit(): void {}
   itemForm = new FormGroup({
-    type: new FormControl(''),
-    amount: new FormControl(''),
+    type: new FormControl('', Validators.required),
+    amount: new FormControl(0, [
+      Validators.pattern('^[0-9]*$'),
+      Validators.required,
+    ]),
     description: new FormControl(''),
   });
+
+  onSubmit() {
+    console.log(this.itemForm.value);
+  }
 }

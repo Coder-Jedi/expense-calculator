@@ -1,15 +1,18 @@
-<form action="">
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
   <label for="type">Type: </label>
-  <input type="text" id="type" name="type" />
+  <select id="type" formControlName="type">
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
   <br />
 
   <label for="amount">Amount: </label>
-  <input type="number" id="amount" name="amount" size="20" />
+  <input type="number" id="amount" size="20" min="0" formControlName="amount" />
   <br />
 
   <label for="description">Description: </label>
-  <input type="text" name="description" id="description" size="50" />
+  <input type="text" id="description" size="50" formControlName="description" />
   <br />
 
-  <input type="submit" name="save" id="save" />
+  <input type="submit" id="save" value="Submit" [disabled]="!itemForm.valid" />
 </form>
