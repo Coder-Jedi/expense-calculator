@@ -11,6 +11,6 @@ export class AppComponent {
   title = 'expense-calculator';
 
   onEcSubmit(formValue) {
-    console.log(formValue);
+    addItemsArray(formValue);
   }
 }
