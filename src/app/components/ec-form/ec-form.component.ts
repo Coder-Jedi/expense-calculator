@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { addItemsArray } from '../ec-entry-item-list/item-list-data';
 @Component({
@@ -10,6 +10,9 @@ export class EcFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  @Output() ecSubmit = new EventEmitter();
+
   itemForm = new FormGroup({
     type: new FormControl('', Validators.required),
     amount: new FormControl(0, [
@@ -20,12 +23,6 @@ export class EcFormComponent implements OnInit {
   });
 
   onSubmit() {
-    console.log(this.itemForm.value);
-
-    addItemsArray({
-      type: this.itemForm.value.type,
-      amount: this.itemForm.value.amount,
-      description: this.itemForm.value.description,
-    });
+    this.ecSubmit.emit(this.itemForm.value);
   }
 }

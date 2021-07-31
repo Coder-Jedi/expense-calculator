@@ -4,7 +4,7 @@
   </div>
   <div class="budget-display-container"></div>
   <div class="input-form-container">
-    <app-ec-form></app-ec-form>
+    <app-ec-form (ecSubmit)="onEcSubmit($event)"></app-ec-form>
   </div>
   <div class="lists-container">
     <div class="income-container">
