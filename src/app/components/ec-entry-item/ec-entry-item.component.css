@@ -1,15 +1,24 @@
 .main-container {
   background-color: bisque;
-  width: 200px;
+  width: max-content;
   height: max-content;
   padding: 10px;
 }
 .amount {
-  padding-right: 5px;
+  padding: 7px 10px;
+  margin-left: 10px;
+}
+.amount-income {
+  background-color: rgb(194, 223, 30);
+}
+.amount-expense {
+  background-color: rgb(230, 64, 14);
 }
 .description {
   padding-left: 5px;
   padding-right: 10px;
 }
 .edit-button {
+}
+.delete-button {
 }

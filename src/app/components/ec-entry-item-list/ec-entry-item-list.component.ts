@@ -1,18 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { itemsArray, addItemsArray, deleteItemsArray, filteredArray } from './item-list-data';
+import { itemsArray, addItemsArray, deleteItemsArray } from './item-list-data';
 
 @Component({
   selector: 'app-ec-entry-item-list',
   templateUrl: './ec-entry-item-list.component.html',
-  styleUrls: ['./ec-entry-item-list.component.css']
+  styleUrls: ['./ec-entry-item-list.component.css'],
 })
 export class EcEntryItemListComponent implements OnInit {
+  constructor() {}
 
-  constructor() { 
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   @Input() type = '';
 
@@ -23,31 +20,26 @@ export class EcEntryItemListComponent implements OnInit {
     addItemsArray({
       id: this.count,
       type: 'income',
-      amount: 1000*this.count,
+      amount: 1000 * this.count,
       description: `Monthly Salary ${this.count}`,
-
     });
     this.count++;
-  };
+  }
   addExpenseObject() {
     addItemsArray({
       id: this.count,
       type: 'expense',
-      amount: 200*this.count,
+      amount: 200 * this.count,
       description: `Expenses no. ${this.count}`,
-
     });
     this.count++;
-  };
+  }
 
   consolelogObject() {
     console.log(itemsArray);
-  };
+  }
 
   deleteItem() {
     deleteItemsArray(this.count);
-  };
-
+  }
 }
-
-

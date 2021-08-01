@@ -1,0 +1,42 @@
+<div class="modal">
+  <div class="modal-content-container">
+    <h2>Entry Item {{ entryID }}</h2>
+    <div class="form-container">
+      <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+        <label for="type">Type: </label>
+        <select id="type" formControlName="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <br />
+
+        <label for="amount">Amount: </label>
+        <input
+          type="number"
+          id="amount"
+          size="20"
+          min="0"
+          formControlName="amount"
+        />
+        <br />
+
+        <label for="description">Description: </label>
+        <input
+          type="text"
+          id="description"
+          size="50"
+          formControlName="description"
+        />
+        <br />
+
+        <input
+          type="submit"
+          id="save"
+          value="Save Changes"
+          [disabled]="!itemForm.valid"
+        />
+        <button type="button" (click)="onClickCancel()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

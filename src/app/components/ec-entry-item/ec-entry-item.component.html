@@ -1,9 +1,19 @@
-<div class="main-container" >
-    <span class="amount">{{amount}}</span>
-    <span class="description">{{description}}</span>
-    <button type="button" 
-            class="edit-button"
-            (click)="onEditClick()"   >
-            Edit
-    </button>
+<div class="main-container">
+  <span class="id">id:{{ id }}</span>
+  <span class="amount" amountHighlight [entryType]="entryType">{{
+    amount
+  }}</span>
+  <span class="description">{{ description }}</span>
+  <button type="button" class="edit-button" (click)="onEditClick()">
+    Edit
+  </button>
+  <button type="button" class="delete-button" (click)="onDeleteClick()">
+    Delete
+  </button>
 </div>
+<app-ec-edit-modal
+  *ngIf="editModal"
+  [entryID]="id"
+  (clickCancel)="onClickCancel()"
+  (clickSaveChanges)="onClickSaveChanges($event)"
+></app-ec-edit-modal>

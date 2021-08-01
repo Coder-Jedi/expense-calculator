@@ -1,5 +1,6 @@
 <ng-container *ngFor="let item of itemsArray">
   <app-ec-entry-item
+    [id]="item.id"
     [amount]="item.amount"
     [description]="item.description"
     [entryType]="item.type"

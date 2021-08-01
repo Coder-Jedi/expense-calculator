@@ -23,6 +23,11 @@ export function deleteItemsArray(itemId) {
   );
 }
 
-export function filteredArray(type) {
-  return itemsArray.filter((item) => item.type === type);
+export function getItem(itemID) {
+  return itemsArray.find((item) => item.id === itemID);
+}
+
+export function setItem(updatedItem) {
+  const index = itemsArray.findIndex((item) => item.id === updatedItem.id);
+  itemsArray[index] = updatedItem;
 }
